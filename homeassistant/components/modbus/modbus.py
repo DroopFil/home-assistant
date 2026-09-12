@@ -1,7 +1,5 @@
 """Support for Modbus."""
 
-from __future__ import annotations
-
 import asyncio
 from collections import namedtuple
 from typing import Any
@@ -14,10 +12,8 @@ from pymodbus.client import (
 from pymodbus.exceptions import ModbusException
 from pymodbus.framer import FramerType
 from pymodbus.pdu import ModbusPDU
-import voluptuous as vol
 
 from homeassistant.const import (
-    ATTR_STATE,
     CONF_DELAY,
     CONF_HOST,
     CONF_METHOD,
@@ -27,20 +23,11 @@ from homeassistant.const import (
     CONF_TYPE,
     EVENT_HOMEASSISTANT_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
+from homeassistant.core import Event, HomeAssistant
 from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_send
 from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
 
 from .const import (
-    _LOGGER,
-    ATTR_ADDRESS,
-    ATTR_HUB,
-    ATTR_SLAVE,
-    ATTR_UNIT,
-    ATTR_VALUE,
     CALL_TYPE_COIL,
     CALL_TYPE_DISCRETE,
     CALL_TYPE_REGISTER_HOLDING,
@@ -54,22 +41,17 @@ from .const import (
     CONF_MSG_WAIT,
     CONF_PARITY,
     CONF_STOPBITS,
-    DEFAULT_HUB,
+    DATA_MODBUS_HUBS,
     DEVICE_ID,
-    MODBUS_DOMAIN as DOMAIN,
+    DOMAIN,
+    LOGGER,
     PLATFORMS,
     RTUOVERTCP,
     SERIAL,
-    SERVICE_STOP,
-    SERVICE_WRITE_COIL,
-    SERVICE_WRITE_REGISTER,
-    SIGNAL_STOP_ENTITY,
     TCP,
     UDP,
 )
 from .validators import check_config
-
-DATA_MODBUS_HUBS: HassKey[dict[str, ModbusHub]] = HassKey(DOMAIN)
 
 PRIMARY_RECONNECT_DELAY = 60
 
@@ -132,6 +114,20 @@ async def async_modbus_setup(
     config: ConfigType,
 ) -> bool:
     """Set up Modbus component."""
+    if await _async_modbus_setup(hass, config):
+        return True
+
+    # Hubs are stored as they are created, so a failure part way through leaves
+    # unusable ones behind. Drop them, so their presence means they are usable.
+    hass.data.pop(DATA_MODBUS_HUBS, None)
+    return False
+
+
+async def _async_modbus_setup(
+    hass: HomeAssistant,
+    config: ConfigType,
+) -> bool:
+    """Set up the Modbus hubs and their platforms."""
 
     if config[DOMAIN]:
         config[DOMAIN] = check_config(hass, config[DOMAIN])
@@ -169,77 +165,6 @@ async def async_modbus_setup(
 
     hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_stop_modbus)
 
-    async def async_write_register(service: ServiceCall) -> None:
-        """Write Modbus registers."""
-        slave = 1
-        if ATTR_UNIT in service.data:
-            slave = int(float(service.data[ATTR_UNIT]))
-
-        if ATTR_SLAVE in service.data:
-            slave = int(float(service.data[ATTR_SLAVE]))
-        address = int(float(service.data[ATTR_ADDRESS]))
-        value = service.data[ATTR_VALUE]
-        hub = hub_collect[service.data.get(ATTR_HUB, DEFAULT_HUB)]
-        if isinstance(value, list):
-            await hub.async_pb_call(
-                slave,
-                address,
-                [int(float(i)) for i in value],
-                CALL_TYPE_WRITE_REGISTERS,
-            )
-        else:
-            await hub.async_pb_call(
-                slave, address, int(float(value)), CALL_TYPE_WRITE_REGISTER
-            )
-
-    async def async_write_coil(service: ServiceCall) -> None:
-        """Write Modbus coil."""
-        slave = 1
-        if ATTR_UNIT in service.data:
-            slave = int(float(service.data[ATTR_UNIT]))
-        if ATTR_SLAVE in service.data:
-            slave = int(float(service.data[ATTR_SLAVE]))
-        address = service.data[ATTR_ADDRESS]
-        state = service.data[ATTR_STATE]
-        hub = hub_collect[service.data.get(ATTR_HUB, DEFAULT_HUB)]
-        if isinstance(state, list):
-            await hub.async_pb_call(slave, address, state, CALL_TYPE_WRITE_COILS)
-        else:
-            await hub.async_pb_call(slave, address, state, CALL_TYPE_WRITE_COIL)
-
-    for x_write in (
-        (SERVICE_WRITE_REGISTER, async_write_register, ATTR_VALUE, cv.positive_int),
-        (SERVICE_WRITE_COIL, async_write_coil, ATTR_STATE, cv.boolean),
-    ):
-        hass.services.async_register(
-            DOMAIN,
-            x_write[0],
-            x_write[1],
-            schema=vol.Schema(
-                {
-                    vol.Optional(ATTR_HUB, default=DEFAULT_HUB): cv.string,
-                    vol.Exclusive(ATTR_SLAVE, "unit"): cv.positive_int,
-                    vol.Exclusive(ATTR_UNIT, "unit"): cv.positive_int,
-                    vol.Required(ATTR_ADDRESS): cv.positive_int,
-                    vol.Required(x_write[2]): vol.Any(
-                        cv.positive_int, vol.All(cv.ensure_list, [x_write[3]])
-                    ),
-                }
-            ),
-        )
-
-    async def async_stop_hub(service: ServiceCall) -> None:
-        """Stop Modbus hub."""
-        async_dispatcher_send(hass, SIGNAL_STOP_ENTITY)
-        hub = hub_collect[service.data[ATTR_HUB]]
-        await hub.async_close()
-
-    hass.services.async_register(
-        DOMAIN,
-        SERVICE_STOP,
-        async_stop_hub,
-        schema=vol.Schema({vol.Required(ATTR_HUB): cv.string}),
-    )
     return True
 
 
@@ -307,22 +232,23 @@ class ModbusHub:
             return
         self._last_log_error = text
         log_text = f"Pymodbus: {self.name}: {text}"
-        _LOGGER.error(log_text)
+        LOGGER.error(log_text)
 
     async def async_pb_connect(self) -> None:
         """Connect to device, async."""
         while True:
-            async with self._lock:
-                try:
-                    if await self._client.connect():  # type: ignore[union-attr]
-                        _LOGGER.info(f"modbus {self.name} communication open")
-                        break
-                except ModbusException as exception_error:
-                    self._log_error(
-                        f"{self.name} connect failed, please check your configuration ({exception_error!s})"
-                    )
-            _LOGGER.info(
-                f"modbus {self.name} connect NOT a success ! retrying in {PRIMARY_RECONNECT_DELAY} seconds"
+            try:
+                if await self._client.connect():  # type: ignore[union-attr]
+                    LOGGER.info(f"modbus {self.name} communication open")
+                    break
+            except ModbusException as exception_error:
+                self._log_error(
+                    f"{self.name} connect failed, please check"
+                    f" your configuration ({exception_error!s})"
+                )
+            LOGGER.info(
+                f"modbus {self.name} connect NOT a success !"
+                f" retrying in {PRIMARY_RECONNECT_DELAY} seconds"
             )
             await asyncio.sleep(PRIMARY_RECONNECT_DELAY)
 
@@ -350,28 +276,19 @@ class ModbusHub:
         )
         return True
 
-    async def async_restart(self) -> None:
-        """Reconnect client."""
-        if self._client:
-            await self.async_close()
-
-        await self.async_setup()
-
     async def async_close(self) -> None:
         """Disconnect client."""
+        self.event_connected.set()
         if not self._connect_task.done():
             self._connect_task.cancel()
 
-        async with self._lock:
-            if self._client:
-                try:
-                    self._client.close()
-                except ModbusException as exception_error:
-                    self._log_error(str(exception_error))
-                del self._client
-                self._client = None
-                message = f"modbus {self.name} communication closed"
-                _LOGGER.info(message)
+        if self._client:
+            try:
+                self._client.close()
+            except ModbusException as exception_error:
+                self._log_error(str(exception_error))
+            self._client = None
+            LOGGER.info(f"modbus {self.name} communication closed")
 
     async def low_level_pb_call(
         self, slave: int | None, address: int, value: int | list[int], use_call: str
@@ -404,7 +321,10 @@ class ModbusHub:
             self._log_error(error)
             return None
         if result.isError():
-            error = f"Error: device: {slave} address: {address} -> pymodbus returned isError True"
+            error = (
+                f"Error: device: {slave} address: {address}"
+                " -> pymodbus returned isError True"
+            )
             self._log_error(error)
             return None
         return result
@@ -417,9 +337,9 @@ class ModbusHub:
         use_call: str,
     ) -> ModbusPDU | None:
         """Convert async to sync pymodbus call."""
+        if not self._client:
+            return None
         async with self._lock:
-            if not self._client:
-                return None
             result = await self.low_level_pb_call(unit, address, value, use_call)
             if self._msg_wait:
                 # small delay until next request/response

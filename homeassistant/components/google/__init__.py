@@ -1,13 +1,11 @@
 """Support for Google - Calendar Event Devices."""
 
-from __future__ import annotations
-
 from collections.abc import Mapping
-from datetime import datetime, timedelta
+from datetime import timedelta
 import logging
+import time
 from typing import Any
 
-import aiohttp
 from gcal_sync.api import GoogleCalendarService
 from gcal_sync.exceptions import ApiException, AuthException
 import voluptuous as vol
@@ -97,18 +95,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: GoogleConfigEntry) -> bo
     # Force a token refresh to fix a bug where tokens were persisted with
     # expires_in (relative time delta) and expires_at (absolute time) swapped.
     # A google session token typically only lasts a few days between refresh.
-    now = datetime.now()
-    if session.token["expires_at"] >= (now + timedelta(days=365)).timestamp():
+    now = time.time()
+    if session.token["expires_at"] >= now + timedelta(days=365).total_seconds():
         session.token["expires_in"] = 0
-        session.token["expires_at"] = now.timestamp()
-    try:
-        await session.async_ensure_token_valid()
-    except aiohttp.ClientResponseError as err:
-        if 400 <= err.status < 500:
-            raise ConfigEntryAuthFailed from err
-        raise ConfigEntryNotReady from err
-    except aiohttp.ClientError as err:
-        raise ConfigEntryNotReady from err
+        session.token["expires_at"] = now
+    await session.async_ensure_token_valid()
 
     if not async_entry_has_scopes(entry):
         raise ConfigEntryAuthFailed(
@@ -134,8 +125,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: GoogleConfigEntry) -> bo
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
-    entry.async_on_unload(entry.add_update_listener(async_reload_entry))
-
     return True
 
 
@@ -149,12 +138,6 @@ def async_entry_has_scopes(entry: GoogleConfigEntry) -> bool:
 async def async_unload_entry(hass: HomeAssistant, entry: GoogleConfigEntry) -> bool:
     """Unload a config entry."""
     return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
-
-
-async def async_reload_entry(hass: HomeAssistant, entry: GoogleConfigEntry) -> None:
-    """Reload config entry if the access options change."""
-    if not async_entry_has_scopes(entry):
-        await hass.config_entries.async_reload(entry.entry_id)
 
 
 async def async_remove_entry(hass: HomeAssistant, entry: GoogleConfigEntry) -> None:

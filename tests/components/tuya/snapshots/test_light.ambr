@@ -1,15 +1,14 @@
 # serializer version: 1
 # name: test_platform_setup_and_discovery[light.ab1-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -29,6 +28,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -46,30 +46,27 @@
 # name: test_platform_setup_and_discovery[light.ab1-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.HS: 'hs'>,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'AB1',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.HS: 'hs'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'AB1',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         6.0,
         97.8,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         31,
         6,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.693,
         0.304,
       ),
@@ -84,15 +81,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.ab6-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -112,6 +108,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -129,16 +126,14 @@
 # name: test_platform_setup_and_discovery[light.ab6-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'ab6',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'ab6',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.ab6',
@@ -150,11 +145,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.arbeitszimmer_led-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
@@ -174,6 +170,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -191,24 +188,24 @@
 # name: test_platform_setup_and_discovery[light.arbeitszimmer_led-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.HS: 'hs'>,
-      'friendly_name': 'Arbeitszimmer led',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.HS: 'hs'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Arbeitszimmer led',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         0.0,
         100.0,
       ),
-      'rgb_color': tuple(
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         0,
         0,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.701,
         0.299,
       ),
@@ -223,15 +220,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.b2-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -251,6 +247,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -268,16 +265,14 @@
 # name: test_platform_setup_and_discovery[light.b2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'b2',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'b2',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.b2',
@@ -289,11 +284,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.bedroom-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.BRIGHTNESS: 'brightness'>,
       ]),
     }),
@@ -312,6 +308,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -329,13 +326,13 @@
 # name: test_platform_setup_and_discovery[light.bedroom-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'friendly_name': 'bedroom',
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'bedroom',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.BRIGHTNESS: 'brightness'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.bedroom',
@@ -345,13 +342,77 @@
     'state': 'off',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.cam_garage_indicator_light-entry]
+# name: test_platform_setup_and_discovery[light.blissradia-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.blissradia',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.bfpewgk8r6fhmissdyzbswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.blissradia-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'BlissRadia ',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.blissradia',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.cam_garage_indicator_light-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
     }),
@@ -370,6 +431,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Indicator light',
     'options': dict({
     }),
     'original_device_class': None,
@@ -387,12 +449,12 @@
 # name: test_platform_setup_and_discovery[light.cam_garage_indicator_light-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'color_mode': <ColorMode.ONOFF: 'onoff'>,
-      'friendly_name': 'CAM GARAGE Indicator light',
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.ONOFF: 'onoff'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'CAM GARAGE Indicator light',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.cam_garage_indicator_light',
@@ -404,11 +466,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.cam_porch_indicator_light-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
     }),
@@ -427,6 +490,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Indicator light',
     'options': dict({
     }),
     'original_device_class': None,
@@ -444,12 +508,12 @@
 # name: test_platform_setup_and_discovery[light.cam_porch_indicator_light-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'color_mode': None,
-      'friendly_name': 'CAM PORCH Indicator light',
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'CAM PORCH Indicator light',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.cam_porch_indicator_light',
@@ -459,17 +523,75 @@
     'state': 'off',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.ceiling_fan_light_v2-entry]
+# name: test_platform_setup_and_discovery[light.cat_feeder_light-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.cat_feeder_light',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Light',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Light',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'light',
+    'unique_id': 'tuya.igkrtodqg14xvfxlqswwclight',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.cat_feeder_light-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.ONOFF: 'onoff'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Cat Feeder Light',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.cat_feeder_light',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'on',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.ceiling_fan_light_v2-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -488,6 +610,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -505,29 +628,26 @@
 # name: test_platform_setup_and_discovery[light.ceiling_fan_light_v2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 500,
-      'color_temp_kelvin': 2000,
-      'friendly_name': 'ceiling fan/Light v2',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'ceiling fan/Light v2',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         30.601,
         94.547,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         137,
         14,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.598,
         0.383,
       ),
@@ -542,15 +662,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.ceiling_fan_with_light-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -569,6 +688,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -586,29 +706,26 @@
 # name: test_platform_setup_and_discovery[light.ceiling_fan_with_light-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 500,
-      'color_temp_kelvin': 2000,
-      'friendly_name': 'Ceiling Fan With Light',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Ceiling Fan With Light',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         30.601,
         94.547,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         137,
         14,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.598,
         0.383,
       ),
@@ -623,15 +740,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.ceiling_portal-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -651,6 +767,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -668,23 +785,20 @@
 # name: test_platform_setup_and_discovery[light.ceiling_portal-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Ceiling Portal',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Ceiling Portal',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.ceiling_portal',
@@ -694,17 +808,155 @@
     'state': 'off',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.colorful_pir_night_light-entry]
+# name: test_platform_setup_and_discovery[light.chasing_tape_light-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.chasing_tape_light',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.bfikk0dxx4wpmpxeddchswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.chasing_tape_light-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Chasing Tape Light',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
+        30.601,
+        94.547,
+      ),
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
+        255,
+        137,
+        14,
+      ),
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
+        0.598,
+        0.383,
+      ),
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.chasing_tape_light',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'on',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.cleverio_pf100_light-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.cleverio_pf100_light',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Light',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Light',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'light',
+    'unique_id': 'tuya.iomszlsve0yyzkfwqswwclight',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.cleverio_pf100_light-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.ONOFF: 'onoff'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Cleverio PF100 Light',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.cleverio_pf100_light',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'on',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.colorful_pir_night_light-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -724,6 +976,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -741,23 +994,20 @@
 # name: test_platform_setup_and_discovery[light.colorful_pir_night_light-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Colorful PIR Night Light',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Colorful PIR Night Light',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.colorful_pir_night_light',
@@ -769,15 +1019,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.directietkamer-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -796,6 +1045,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -813,22 +1063,19 @@
 # name: test_platform_setup_and_discovery[light.directietkamer-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'DirectietKamer',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'DirectietKamer',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.directietkamer',
@@ -840,15 +1087,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.dressoir_spot-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -867,6 +1113,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -884,22 +1131,19 @@
 # name: test_platform_setup_and_discovery[light.dressoir_spot-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'dressoir spot',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'dressoir spot',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.dressoir_spot',
@@ -911,15 +1155,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.druckerhell-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -939,6 +1182,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -956,30 +1200,27 @@
 # name: test_platform_setup_and_discovery[light.druckerhell-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 500,
-      'color_temp_kelvin': 2000,
-      'friendly_name': 'druckerhell',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'druckerhell',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         30.601,
         94.547,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         137,
         14,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.598,
         0.383,
       ),
@@ -994,11 +1235,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.entry_stairs-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.BRIGHTNESS: 'brightness'>,
       ]),
     }),
@@ -1017,6 +1259,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1034,11 +1277,11 @@
 # name: test_platform_setup_and_discovery[light.entry_stairs-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Entry Stairs',
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Entry Stairs',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.BRIGHTNESS: 'brightness'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.entry_stairs',
@@ -1050,15 +1293,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.erker_1_gold-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -1077,6 +1319,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1094,29 +1337,26 @@
 # name: test_platform_setup_and_discovery[light.erker_1_gold-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 500,
-      'color_temp_kelvin': 2000,
-      'friendly_name': 'ERKER 1-Gold ',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'ERKER 1-Gold ',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         30.601,
         94.547,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         137,
         14,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.598,
         0.383,
       ),
@@ -1131,15 +1371,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.fakkel_8-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1159,6 +1398,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1176,30 +1416,27 @@
 # name: test_platform_setup_and_discovery[light.fakkel_8-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 70,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 500,
-      'color_temp_kelvin': 2000,
-      'friendly_name': 'Fakkel 8',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 70,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Fakkel 8',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         30.601,
         94.547,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         137,
         14,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.598,
         0.383,
       ),
@@ -1214,11 +1451,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.floodlight-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
@@ -1238,6 +1476,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1255,17 +1494,17 @@
 # name: test_platform_setup_and_discovery[light.floodlight-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'friendly_name': 'Floodlight',
-      'hs_color': None,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Floodlight',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.floodlight',
@@ -1277,15 +1516,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.front_right_lighting_trap-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1305,6 +1543,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1322,23 +1561,20 @@
 # name: test_platform_setup_and_discovery[light.front_right_lighting_trap-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Front right Lighting trap',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Front right Lighting trap',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.front_right_lighting_trap',
@@ -1350,15 +1586,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.garage-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1378,6 +1613,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1395,23 +1631,20 @@
 # name: test_platform_setup_and_discovery[light.garage-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Garage',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Garage',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.garage',
@@ -1423,11 +1656,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.garage_light-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
@@ -1447,6 +1681,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1464,17 +1699,17 @@
 # name: test_platform_setup_and_discovery[light.garage_light-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 138,
-      'color_mode': <ColorMode.WHITE: 'white'>,
-      'friendly_name': 'Garage light',
-      'hs_color': None,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 138,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.WHITE: 'white'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Garage light',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.garage_light',
@@ -1486,11 +1721,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.garage_light_1-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
     }),
@@ -1509,6 +1745,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Light 1',
     'options': dict({
     }),
     'original_device_class': None,
@@ -1526,12 +1763,12 @@
 # name: test_platform_setup_and_discovery[light.garage_light_1-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'color_mode': None,
-      'friendly_name': 'Garage Light 1',
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Garage Light 1',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.garage_light_1',
@@ -1543,15 +1780,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.gengske-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1571,6 +1807,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1588,23 +1825,20 @@
 # name: test_platform_setup_and_discovery[light.gengske-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Gengske 💡 ',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Gengske 💡 ',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.gengske',
@@ -1616,15 +1850,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.hall-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -1643,6 +1876,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1660,22 +1894,19 @@
 # name: test_platform_setup_and_discovery[light.hall-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'hall 💡 ',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'hall 💡 ',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.hall',
@@ -1687,15 +1918,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.ieskas-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -1714,6 +1944,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1731,29 +1962,26 @@
 # name: test_platform_setup_and_discovery[light.ieskas-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 285,
-      'color_temp_kelvin': 3508,
-      'friendly_name': 'Ieskas',
-      'hs_color': tuple(
-        27.165,
-        44.6,
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 3502,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Ieskas',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
+        27.171,
+        44.73,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         193,
         141,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.453,
         0.374,
       ),
@@ -1766,17 +1994,209 @@
     'state': 'on',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.landing-entry]
+# name: test_platform_setup_and_discovery[light.jardim_casa-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.jardim_casa',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.oxi73pj9a0ubr60pjdswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.jardim_casa-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Jardim Casa',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.jardim_casa',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'unavailable',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.kattenbak_light-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.kattenbak_light',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Light',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Light',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'light',
+    'unique_id': 'tuya.yohkwjjdjlzludd3psmlight',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.kattenbak_light-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Kattenbak Light',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.kattenbak_light',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.l_impara_ati-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.l_impara_ati',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.a6ugbo3of3hqf4jojdswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.l_impara_ati-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'L├ímpara Ati',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.l_impara_ati',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.landing-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1796,6 +2216,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1813,23 +2234,20 @@
 # name: test_platform_setup_and_discovery[light.landing-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Landing',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Landing',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.landing',
@@ -1841,15 +2259,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.led_keuken_2-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1869,6 +2286,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1886,30 +2304,27 @@
 # name: test_platform_setup_and_discovery[light.led_keuken_2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 255,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': 500,
-      'color_temp_kelvin': 2000,
-      'friendly_name': 'LED KEUKEN 2',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 255,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 2000,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'LED KEUKEN 2',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         30.601,
         94.547,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         137,
         14,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.598,
         0.383,
       ),
@@ -1924,15 +2339,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.led_porch_2-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -1952,6 +2366,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -1969,16 +2384,14 @@
 # name: test_platform_setup_and_discovery[light.led_porch_2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'LED Porch 2',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'LED Porch 2',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.led_porch_2',
@@ -1990,15 +2403,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.lsc_party_string_light_rgbic_cct-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -2018,6 +2430,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2035,16 +2448,14 @@
 # name: test_platform_setup_and_discovery[light.lsc_party_string_light_rgbic_cct-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'LSC Party String Light RGBIC+CCT ',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'LSC Party String Light RGBIC+CCT ',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.lsc_party_string_light_rgbic_cct',
@@ -2056,15 +2467,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.lumy_garage-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -2084,6 +2494,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2101,23 +2512,20 @@
 # name: test_platform_setup_and_discovery[light.lumy_garage-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Lumy Garage',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Lumy Garage',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.lumy_garage',
@@ -2129,15 +2537,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.lumy_hall-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2156,6 +2563,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2173,22 +2581,19 @@
 # name: test_platform_setup_and_discovery[light.lumy_hall-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Lumy Hall',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Lumy Hall',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.lumy_hall',
@@ -2200,15 +2605,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.master_bedroom_tv_lights-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -2228,6 +2632,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2245,30 +2650,27 @@
 # name: test_platform_setup_and_discovery[light.master_bedroom_tv_lights-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': 51,
-      'color_mode': <ColorMode.HS: 'hs'>,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Master bedroom TV lights',
-      'hs_color': tuple(
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 51,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.HS: 'hs'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Master bedroom TV lights',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
         26.072,
         100.0,
       ),
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': tuple(
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
         255,
         111,
         0,
       ),
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': tuple(
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
         0.632,
         0.358,
       ),
@@ -2281,17 +2683,75 @@
     'state': 'on',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.parker_ceiling_fan_1-entry]
+# name: test_platform_setup_and_discovery[light.mini_split_backlight-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.mini_split_backlight',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Backlight',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Backlight',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'backlight',
+    'unique_id': 'tuya.zzz87dkfce6pdqxwtklight',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.mini_split_backlight-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Mini-Split Backlight',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.mini_split_backlight',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.parker_ceiling_fan_1-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -2311,6 +2771,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2328,16 +2789,14 @@
 # name: test_platform_setup_and_discovery[light.parker_ceiling_fan_1-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Parker Ceiling Fan 1',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Parker Ceiling Fan 1',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.parker_ceiling_fan_1',
@@ -2347,17 +2806,155 @@
     'state': 'unavailable',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.pokerlamp_1-entry]
+# name: test_platform_setup_and_discovery[light.pergola_backlight-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.pergola_backlight',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Backlight',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Backlight',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'backlight',
+    'unique_id': 'tuya.shga3pmbkwhthvqxgklcswitch_backlight',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.pergola_backlight-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Pergola Backlight',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.pergola_backlight',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.plafond_bureau-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.plafond_bureau',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.t88qaeyydamm9xhsddxswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.plafond_bureau-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 241,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: 3824,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Plafond bureau ',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
+        26.908,
+        38.154,
+      ),
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
+        255,
+        201,
+        158,
+      ),
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
+        0.431,
+        0.367,
+      ),
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.plafond_bureau',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'on',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.pokerlamp_1-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2376,6 +2973,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2393,15 +2991,13 @@
 # name: test_platform_setup_and_discovery[light.pokerlamp_1-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Pokerlamp 1',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Pokerlamp 1',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.pokerlamp_1',
@@ -2413,15 +3009,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.pokerlamp_2-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2440,6 +3035,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2457,15 +3053,13 @@
 # name: test_platform_setup_and_discovery[light.pokerlamp_2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Pokerlamp 2',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Pokerlamp 2',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.pokerlamp_2',
@@ -2477,11 +3071,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.porch_light_e-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
@@ -2501,6 +3096,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2518,17 +3114,17 @@
 # name: test_platform_setup_and_discovery[light.porch_light_e-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'friendly_name': 'Porch light E',
-      'hs_color': None,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Porch light E',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.porch_light_e',
@@ -2538,17 +3134,80 @@
     'state': 'off',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.powerasia_r2-entry]
+# name: test_platform_setup_and_discovery[light.portal_casa_carro_jalimy-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.portal_casa_carro_jalimy',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.pdnimgsb3w0xko3kjdswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.portal_casa_carro_jalimy-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Portal Casa Carro Jalimy',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.portal_casa_carro_jalimy',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'unavailable',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.powerasia_r2-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2567,6 +3226,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2584,22 +3244,19 @@
 # name: test_platform_setup_and_discovery[light.powerasia_r2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': <ColorMode.COLOR_TEMP: 'color_temp'>,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'POWERASIA R2',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.COLOR_TEMP: 'color_temp'>,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'POWERASIA R2',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.powerasia_r2',
@@ -2609,17 +3266,202 @@
     'state': 'on',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.sjiethoes-entry]
+# name: test_platform_setup_and_discovery[light.roller_shutter_living_room_backlight-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.roller_shutter_living_room_backlight',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Backlight',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Backlight',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': 'backlight',
+    'unique_id': 'tuya.jzpap0inhkykqtlwgklcswitch_backlight',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.roller_shutter_living_room_backlight-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Roller shutter Living Room Backlight',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.roller_shutter_living_room_backlight',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.security_camera_indicator_light-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': <EntityCategory.CONFIG: 'config'>,
+    'entity_id': 'light.security_camera_indicator_light',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': 'Indicator light',
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': 'Indicator light',
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.xihygtyd0d1faknkpsbasic_indicator',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.security_camera_indicator_light-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.ONOFF: 'onoff'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Security Camera Indicator light',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.ONOFF: 'onoff'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.security_camera_indicator_light',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'on',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.shop_light_5-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.shop_light_5',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.y1dkg3disbacmqfyjdswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.shop_light_5-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Shop Light 5',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.shop_light_5',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.sjiethoes-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2638,6 +3480,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2655,15 +3498,13 @@
 # name: test_platform_setup_and_discovery[light.sjiethoes-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Sjiethoes',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Sjiethoes',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.sjiethoes',
@@ -2675,15 +3516,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.slaapkamer-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2702,6 +3542,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2719,22 +3560,19 @@
 # name: test_platform_setup_and_discovery[light.slaapkamer-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Slaapkamer',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Slaapkamer',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.slaapkamer',
@@ -2746,15 +3584,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.smart_bulb_rgbcw-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -2774,6 +3611,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2791,23 +3629,20 @@
 # name: test_platform_setup_and_discovery[light.smart_bulb_rgbcw-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Smart Bulb RGBCW',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Smart Bulb RGBCW',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.smart_bulb_rgbcw',
@@ -2817,13 +3652,87 @@
     'state': 'off',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.solar_zijpad-entry]
+# name: test_platform_setup_and_discovery[light.smart_white_noise_machine-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.smart_white_noise_machine',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.ri7eegdifufzdi54dyzbswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.smart_white_noise_machine-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: 1003,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.HS: 'hs'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Smart White Noise Machine',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: tuple(
+        239.666,
+        393.307,
+      ),
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: tuple(
+        -748,
+        -742,
+        255,
+      ),
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: tuple(
+        -0.03,
+        -0.215,
+      ),
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.smart_white_noise_machine',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'on',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.solar_zijpad-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.BRIGHTNESS: 'brightness'>,
       ]),
     }),
@@ -2842,6 +3751,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2859,11 +3769,11 @@
 # name: test_platform_setup_and_discovery[light.solar_zijpad-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Solar zijpad',
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Solar zijpad',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.BRIGHTNESS: 'brightness'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.solar_zijpad',
@@ -2875,11 +3785,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.stairs-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
@@ -2899,6 +3810,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2916,17 +3828,17 @@
 # name: test_platform_setup_and_discovery[light.stairs-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'friendly_name': 'Stairs',
-      'hs_color': None,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Stairs',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.HS: 'hs'>,
         <ColorMode.WHITE: 'white'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.stairs',
@@ -2938,15 +3850,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.stoel-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -2965,6 +3876,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -2982,15 +3894,13 @@
 # name: test_platform_setup_and_discovery[light.stoel-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Stoel',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Stoel',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.stoel',
@@ -3002,15 +3912,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.strip_2-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -3030,6 +3939,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -3047,16 +3957,14 @@
 # name: test_platform_setup_and_discovery[light.strip_2-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'Strip 2',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Strip 2',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.strip_2',
@@ -3068,15 +3976,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.study_1-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
@@ -3096,6 +4003,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -3113,23 +4021,20 @@
 # name: test_platform_setup_and_discovery[light.study_1-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'brightness': None,
-      'color_mode': None,
-      'color_temp': None,
-      'color_temp_kelvin': None,
-      'friendly_name': 'Study 1',
-      'hs_color': None,
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'rgb_color': None,
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Study 1',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
         <ColorMode.HS: 'hs'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
-      'xy_color': None,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
     }),
     'context': <ANY>,
     'entity_id': 'light.study_1',
@@ -3141,11 +4046,12 @@
 # ---
 # name: test_platform_setup_and_discovery[light.tapparelle_studio_backlight-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
     }),
@@ -3164,6 +4070,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Backlight',
     'options': dict({
     }),
     'original_device_class': None,
@@ -3181,12 +4088,12 @@
 # name: test_platform_setup_and_discovery[light.tapparelle_studio_backlight-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'color_mode': <ColorMode.ONOFF: 'onoff'>,
-      'friendly_name': 'Tapparelle studio Backlight',
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.ONOFF: 'onoff'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Tapparelle studio Backlight',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.tapparelle_studio_backlight',
@@ -3196,13 +4103,82 @@
     'state': 'on',
   })
 # ---
-# name: test_platform_setup_and_discovery[light.tower_fan_ca_407g_smart_backlight-entry]
+# name: test_platform_setup_and_discovery[light.telecommande_lumieres_zigbee-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.telecommande_lumieres_zigbee',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.rsjdwgnbqkyswitch_controller',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.telecommande_lumieres_zigbee-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <LightEntityStateAttribute.COLOR_TEMP_KELVIN: 'color_temp_kelvin'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Télécommande lumières ZigBee',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.COLOR_TEMP: 'color_temp'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.telecommande_lumieres_zigbee',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'unknown',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.tower_fan_ca_407g_smart_backlight-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
     }),
@@ -3221,6 +4197,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': 'Backlight',
     'options': dict({
     }),
     'original_device_class': None,
@@ -3238,12 +4215,12 @@
 # name: test_platform_setup_and_discovery[light.tower_fan_ca_407g_smart_backlight-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'color_mode': <ColorMode.ONOFF: 'onoff'>,
-      'friendly_name': 'Tower Fan CA-407G Smart Backlight',
-      'supported_color_modes': list([
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: <ColorMode.ONOFF: 'onoff'>,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'Tower Fan CA-407G Smart Backlight',
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.ONOFF: 'onoff'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.tower_fan_ca_407g_smart_backlight',
@@ -3255,15 +4232,14 @@
 # ---
 # name: test_platform_setup_and_discovery[light.wc_d1-entry]
   EntityRegistryEntrySnapshot({
-    'aliases': set({
-    }),
+    'aliases': list([
+      None,
+    ]),
     'area_id': None,
     'capabilities': dict({
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
     }),
@@ -3282,6 +4258,7 @@
     'labels': set({
     }),
     'name': None,
+    'object_id_base': None,
     'options': dict({
     }),
     'original_device_class': None,
@@ -3299,15 +4276,13 @@
 # name: test_platform_setup_and_discovery[light.wc_d1-state]
   StateSnapshot({
     'attributes': ReadOnlyDict({
-      'friendly_name': 'WC D1',
-      'max_color_temp_kelvin': 6500,
-      'max_mireds': 500,
-      'min_color_temp_kelvin': 2000,
-      'min_mireds': 153,
-      'supported_color_modes': list([
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'WC D1',
+      <LightEntityCapabilityAttribute.MAX_COLOR_TEMP_KELVIN: 'max_color_temp_kelvin'>: 6500,
+      <LightEntityCapabilityAttribute.MIN_COLOR_TEMP_KELVIN: 'min_color_temp_kelvin'>: 2000,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
         <ColorMode.COLOR_TEMP: 'color_temp'>,
       ]),
-      'supported_features': <LightEntityFeature: 0>,
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
     }),
     'context': <ANY>,
     'entity_id': 'light.wc_d1',
@@ -3315,5 +4290,68 @@
     'last_reported': <ANY>,
     'last_updated': <ANY>,
     'state': 'unavailable',
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.white_noise_machine-entry]
+  EntityRegistryEntrySnapshot({
+    'aliases': list([
+      None,
+    ]),
+    'area_id': None,
+    'capabilities': dict({
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.HS: 'hs'>,
+      ]),
+    }),
+    'config_entry_id': <ANY>,
+    'config_subentry_id': <ANY>,
+    'device_class': None,
+    'device_id': <ANY>,
+    'disabled_by': None,
+    'domain': 'light',
+    'entity_category': None,
+    'entity_id': 'light.white_noise_machine',
+    'has_entity_name': True,
+    'hidden_by': None,
+    'icon': None,
+    'id': <ANY>,
+    'labels': set({
+    }),
+    'name': None,
+    'object_id_base': None,
+    'options': dict({
+    }),
+    'original_device_class': None,
+    'original_icon': None,
+    'original_name': None,
+    'platform': 'tuya',
+    'previous_unique_id': None,
+    'suggested_object_id': None,
+    'supported_features': 0,
+    'translation_key': None,
+    'unique_id': 'tuya.c9nbmrweturkgqktdyzbswitch_led',
+    'unit_of_measurement': None,
+  })
+# ---
+# name: test_platform_setup_and_discovery[light.white_noise_machine-state]
+  StateSnapshot({
+    'attributes': ReadOnlyDict({
+      <LightEntityStateAttribute.BRIGHTNESS: 'brightness'>: None,
+      <LightEntityStateAttribute.COLOR_MODE: 'color_mode'>: None,
+      <EntityStateAttribute.FRIENDLY_NAME: 'friendly_name'>: 'White Noise Machine',
+      <LightEntityStateAttribute.HS_COLOR: 'hs_color'>: None,
+      <LightEntityStateAttribute.RGB_COLOR: 'rgb_color'>: None,
+      <LightEntityCapabilityAttribute.SUPPORTED_COLOR_MODES: 'supported_color_modes'>: list([
+        <ColorMode.HS: 'hs'>,
+      ]),
+      <EntityStateAttribute.SUPPORTED_FEATURES: 'supported_features'>: <LightEntityFeature: 0>,
+      <LightEntityStateAttribute.XY_COLOR: 'xy_color'>: None,
+    }),
+    'context': <ANY>,
+    'entity_id': 'light.white_noise_machine',
+    'last_changed': <ANY>,
+    'last_reported': <ANY>,
+    'last_updated': <ANY>,
+    'state': 'off',
   })
 # ---

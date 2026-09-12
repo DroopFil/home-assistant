@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, create_autospec, patch
 from zcc.device import ControlPointDevice
 
 from homeassistant.components.zimi.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
+from homeassistant.const import CONF_HOST, CONF_PORT, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.setup import async_setup_component
 
@@ -34,12 +34,13 @@ INPUT_PORT = 5003
 def mock_api_device(
     device_name: str | None = None,
     entity_type: str | None = None,
+    entity_id: str | None = None,
 ) -> MagicMock:
     """Mock a Zimi ControlPointDevice which is used in the zcc API with defaults."""
 
     mock_api_device = create_autospec(ControlPointDevice)
 
-    mock_api_device.identifier = ENTITY_INFO["id"]
+    mock_api_device.identifier = entity_id or ENTITY_INFO["id"]
     mock_api_device.room = ENTITY_INFO["room"]
     mock_api_device.name = ENTITY_INFO["name"]
     mock_api_device.type = entity_type or ENTITY_INFO["type"]
@@ -55,6 +56,7 @@ def mock_api_device(
     mock_api_device.manufacture_info = mock_manfacture_info
 
     mock_api_device.brightness = 0
+    mock_api_device.is_closed = False
     mock_api_device.percentage = 0
 
     return mock_api_device
@@ -62,7 +64,7 @@ def mock_api_device(
 
 async def setup_platform(
     hass: HomeAssistant,
-    platform: str,
+    platform: Platform,
 ) -> MockConfigEntry:
     """Set up the specified Zimi platform."""
 

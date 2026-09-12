@@ -5,6 +5,7 @@ from typing import Any
 
 import voluptuous as vol
 
+from homeassistant.components.media_source import local_source
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import ATTR_ENTITY_ID, CONF_DESCRIPTION, CONF_SELECTOR
 from homeassistant.core import (
@@ -29,11 +30,20 @@ from .const import (
     DATA_PREFERENCES,
     DOMAIN,
     SERVICE_GENERATE_DATA,
+    SERVICE_GENERATE_IMAGE,
     AITaskEntityFeature,
 )
 from .entity import AITaskEntity
 from .http import async_setup as async_setup_http
-from .task import GenDataTask, GenDataTaskResult, async_generate_data
+from .media_source import async_get_media_source
+from .task import (
+    GenDataTask,
+    GenDataTaskResult,
+    GenImageTask,
+    GenImageTaskResult,
+    async_generate_data,
+    async_generate_image,
+)
 
 __all__ = [
     "DOMAIN",
@@ -41,10 +51,10 @@ __all__ = [
     "AITaskEntityFeature",
     "GenDataTask",
     "GenDataTaskResult",
+    "GenImageTask",
+    "GenImageTaskResult",
     "async_generate_data",
-    "async_setup",
-    "async_setup_entry",
-    "async_unload_entry",
+    "async_generate_image",
 ]
 
 _LOGGER = logging.getLogger(__name__)
@@ -80,6 +90,9 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     hass.data[DATA_PREFERENCES] = AITaskPreferences(hass)
     await hass.data[DATA_PREFERENCES].async_load()
     async_setup_http(hass)
+    if hass.config.media_dirs:
+        source = await async_get_media_source(hass)
+        hass.http.register_view(local_source.LocalMediaView(hass, source))
     hass.services.async_register(
         DOMAIN,
         SERVICE_GENERATE_DATA,
@@ -93,8 +106,25 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
                     vol.Schema({str: STRUCTURE_FIELD_SCHEMA}),
                     _validate_structure_fields,
                 ),
-                vol.Optional(ATTR_ATTACHMENTS): vol.All(
-                    cv.ensure_list, [selector.MediaSelector({"accept": ["*/*"]})]
+                vol.Optional(ATTR_ATTACHMENTS): selector.MediaSelector(
+                    {"accept": ["*/*"], "multiple": True}
+                ),
+            }
+        ),
+        supports_response=SupportsResponse.ONLY,
+        job_type=HassJobType.Coroutinefunction,
+    )
+    hass.services.async_register(
+        DOMAIN,
+        SERVICE_GENERATE_IMAGE,
+        async_service_generate_image,
+        schema=vol.Schema(
+            {
+                vol.Required(ATTR_TASK_NAME): cv.string,
+                vol.Optional(ATTR_ENTITY_ID): cv.entity_id,
+                vol.Required(ATTR_INSTRUCTIONS): cv.string,
+                vol.Optional(ATTR_ATTACHMENTS): selector.MediaSelector(
+                    {"accept": ["*/*"], "multiple": True}
                 ),
             }
         ),
@@ -115,17 +145,25 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
 
 async def async_service_generate_data(call: ServiceCall) -> ServiceResponse:
-    """Run the run task service."""
-    result = await async_generate_data(hass=call.hass, **call.data)
+    """Run the data task service."""
+    result = await async_generate_data(
+        hass=call.hass, context=call.context, **call.data
+    )
     return result.as_dict()
+
+
+async def async_service_generate_image(call: ServiceCall) -> ServiceResponse:
+    """Run the image task service."""
+    return await async_generate_image(hass=call.hass, context=call.context, **call.data)
 
 
 class AITaskPreferences:
     """AI Task preferences."""
 
-    KEYS = ("gen_data_entity_id",)
+    KEYS = ("gen_data_entity_id", "gen_image_entity_id")
 
     gen_data_entity_id: str | None = None
+    gen_image_entity_id: str | None = None
 
     def __init__(self, hass: HomeAssistant) -> None:
         """Initialize the preferences."""
@@ -139,17 +177,21 @@ class AITaskPreferences:
         if data is None:
             return
         for key in self.KEYS:
-            setattr(self, key, data[key])
+            setattr(self, key, data.get(key))
 
     @callback
     def async_set_preferences(
         self,
         *,
-        gen_data_entity_id: str | None | UndefinedType = UNDEFINED,
+        gen_data_entity_id: str | UndefinedType | None = UNDEFINED,
+        gen_image_entity_id: str | UndefinedType | None = UNDEFINED,
     ) -> None:
         """Set the preferences."""
         changed = False
-        for key, value in (("gen_data_entity_id", gen_data_entity_id),):
+        for key, value in (
+            ("gen_data_entity_id", gen_data_entity_id),
+            ("gen_image_entity_id", gen_image_entity_id),
+        ):
             if value is not UNDEFINED:
                 if getattr(self, key) != value:
                     setattr(self, key, value)

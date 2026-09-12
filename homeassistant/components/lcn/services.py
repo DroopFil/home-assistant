@@ -1,8 +1,10 @@
 """Service calls related dependencies for LCN component."""
 
 from enum import StrEnum, auto
+from typing import override
 
 import pypck
+from pypck.device import DeviceConnection
 import voluptuous as vol
 
 from homeassistant.const import (
@@ -19,7 +21,8 @@ from homeassistant.core import (
     callback,
 )
 from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from homeassistant.helpers import config_validation as cv
+from homeassistant.helpers.service import async_get_device_and_config_entry
 
 from .const import (
     CONF_KEYS,
@@ -48,7 +51,7 @@ from .const import (
     VAR_UNITS,
     VARIABLES,
 )
-from .helpers import DeviceConnectionType, LcnConfigEntry, is_states_string
+from .helpers import LcnConfigEntry, is_states_string
 
 
 class LcnServiceCall:
@@ -65,30 +68,15 @@ class LcnServiceCall:
         """Initialize service call."""
         self.hass = hass
 
-    def get_device_connection(self, service: ServiceCall) -> DeviceConnectionType:
+    def get_device_connection(self, service: ServiceCall) -> DeviceConnection:
         """Get address connection object."""
-        entries: list[LcnConfigEntry] = self.hass.config_entries.async_loaded_entries(
-            DOMAIN
+        entry: LcnConfigEntry
+        # device_connections is keyed by the ids of the main devices LCN registers
+        # for its modules and groups, so a child device has no connection
+        device, entry = async_get_device_and_config_entry(
+            self.hass, DOMAIN, service.data[CONF_DEVICE_ID], include_child_devices=False
         )
-        device_id = service.data[CONF_DEVICE_ID]
-        device_registry = dr.async_get(self.hass)
-        if not (device := device_registry.async_get(device_id)) or not (
-            entry := next(
-                (
-                    entry
-                    for entry in entries
-                    if entry.entry_id == device.primary_config_entry
-                ),
-                None,
-            )
-        ):
-            raise ServiceValidationError(
-                translation_domain=DOMAIN,
-                translation_key="invalid_device_id",
-                translation_placeholders={"device_id": device_id},
-            )
-
-        return entry.runtime_data.device_connections[device_id]
+        return entry.runtime_data.device_connections[device.id]
 
     async def async_call_service(self, service: ServiceCall) -> ServiceResponse:
         """Execute service call."""
@@ -110,6 +98,7 @@ class OutputAbs(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         output = pypck.lcn_defs.OutputPort[service.data[CONF_OUTPUT]]
@@ -134,6 +123,7 @@ class OutputRel(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         output = pypck.lcn_defs.OutputPort[service.data[CONF_OUTPUT]]
@@ -155,6 +145,7 @@ class OutputToggle(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         output = pypck.lcn_defs.OutputPort[service.data[CONF_OUTPUT]]
@@ -171,6 +162,7 @@ class Relays(LcnServiceCall):
 
     schema = LcnServiceCall.schema.extend({vol.Required(CONF_STATE): is_states_string})
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         states = [
@@ -192,6 +184,7 @@ class Led(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         led = pypck.lcn_defs.LedPort[service.data[CONF_LED]]
@@ -220,6 +213,7 @@ class VarAbs(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         var = pypck.lcn_defs.Var[service.data[CONF_VARIABLE]]
@@ -237,6 +231,7 @@ class VarReset(LcnServiceCall):
         {vol.Required(CONF_VARIABLE): vol.All(vol.Upper, vol.In(VARIABLES + SETPOINTS))}
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         var = pypck.lcn_defs.Var[service.data[CONF_VARIABLE]]
@@ -263,6 +258,7 @@ class VarRel(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         var = pypck.lcn_defs.Var[service.data[CONF_VARIABLE]]
@@ -284,6 +280,7 @@ class LockRegulator(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         setpoint = pypck.lcn_defs.Var[service.data[CONF_SETPOINT]]
@@ -312,6 +309,7 @@ class SendKeys(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         device_connection = self.get_device_connection(service)
@@ -329,7 +327,7 @@ class SendKeys(LcnServiceCall):
 
         if (delay_time := service.data[CONF_TIME]) != 0:
             hit = pypck.lcn_defs.SendKeyCommand.HIT
-            if pypck.lcn_defs.SendKeyCommand[service.data[CONF_STATE]] != hit:
+            if pypck.lcn_defs.SendKeyCommand[service.data[CONF_STATE]] is not hit:
                 raise ServiceValidationError(
                     translation_domain=DOMAIN,
                     translation_key="invalid_send_keys_action",
@@ -357,6 +355,7 @@ class LockKeys(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         device_connection = self.get_device_connection(service)
@@ -380,9 +379,6 @@ class LockKeys(LcnServiceCall):
         else:
             await device_connection.lock_keys(table_id, states)
 
-        handler = device_connection.status_requests_handler
-        await handler.request_status_locked_keys_timeout()
-
 
 class DynText(LcnServiceCall):
     """Send dynamic text to LCN-GTxD displays."""
@@ -394,6 +390,7 @@ class DynText(LcnServiceCall):
         }
     )
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         row_id = service.data[CONF_ROW] - 1
@@ -408,6 +405,7 @@ class Pck(LcnServiceCall):
 
     schema = LcnServiceCall.schema.extend({vol.Required(CONF_PCK): str})
 
+    @override
     async def async_call_service(self, service: ServiceCall) -> None:
         """Execute service call."""
         pck = service.data[CONF_PCK]
